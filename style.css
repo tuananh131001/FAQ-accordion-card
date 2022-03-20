@@ -7,12 +7,20 @@
     --Soft-violet: hsl(273, 75%, 66%);
     --Soft-blue: hsl(240, 73%, 65%);
     --Light-grayish-blue: hsl(240, 5%, 91%);
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
 }
 body{
     display: grid;
     place-content: center;
     min-height: 100vh;
-    background-color: var(--Soft-blue);
+    background-image: linear-gradient(
+    180deg,
+    var(--Soft-violet),
+    var(--Soft-blue)
+  );
     font-family: 'Kumbh Sans', sans-serif;
 }
 
@@ -23,50 +31,83 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
     background-color: white;
     border-radius: 1rem;
     background-repeat: no-repeat;
     background-position: left;
 }
+
 .women{
-    position: absolute;
-    width: 65%;
-    top: 7%;
-    left: 50%;
-    transform: translate(-50%);
+    display: flex;
+    margin-top : -7em;
+    width: 15rem;
+    z-index: 1;
+    background: url(./images/bg-pattern-mobile.svg) no-repeat bottom;
 }
 .box{
     display: none;
+}
+main .left-card{
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-bottom: 2.5rem;
+    z-index: 1;
 }
 .right-card{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.4rem;
-    gap: 3rem;
-    padding: 2rem;
+    width: 100%;
+    padding: 1.5em 1.5em 3em 1.5em ;
+    gap: 2rem;
+    z-index: 0;
 }
 .title{
-    padding: 6rem 0 0 0;
+    padding-top: 1rem;
 }
 .faq-text{
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 1rem;
 }
-
+details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Before open */
 details > summary{
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
     font-size: 0.8rem;
     list-style: none;
+    cursor: pointer;
 }
 hr { 
     display: block; 
-
     border-top: 1px solid var(--Light-grayish-blue);
 }
+/* After open */
 details > summary::after{
+    display: flex;
+    align-items: center;
     content: url(./images/icon-arrow-down.svg);
-}
 
+}
+details[open] > summary::after{
+    transform: rotate(180deg);
+}
+details[open] > summary{
+    color: var(--Very-dark-desaturated-blue);
+    font-weight: 700;
+}
+.answer{
+    font-size: 0.8rem;
+    margin-top: 1em;
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+}
