@@ -31,29 +31,35 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
     background-color: white;
     border-radius: 1rem;
     background-repeat: no-repeat;
     background-position: left;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .women{
     display: flex;
-    margin-top : -7em;
+    position: relative;
+    margin-top: -16em;
     width: 15rem;
     z-index: 1;
-    background: url(./images/bg-pattern-mobile.svg) no-repeat bottom;
 }
 .box{
-    display: none;
+    display: flex;
+    position: absolute;
+    width: 5rem;
+    margin-top: -11em;
+    z-index: 2;
+
 }
 main .left-card{
     background-image: url(./images/bg-pattern-mobile.svg);
     background-repeat: no-repeat;
     background-position: top center;
-    padding-bottom: 2.5rem;
+    padding-top: 9em;
     z-index: 1;
+
 }
 .right-card{
     display: flex;
@@ -65,20 +71,21 @@ main .left-card{
     z-index: 0;
 }
 .title{
-    padding-top: 1rem;
+    margin-top: -1.5em;
 }
 .faq-text{
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 1rem;
+    font-weight: 400;
+    color: var(--Dark-grayish-blue);
 }
 details{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-/* Before open */
 details > summary{
     display: flex;
     align-items: center;
@@ -87,27 +94,97 @@ details > summary{
     list-style: none;
     cursor: pointer;
 }
+details > summary:hover{
+    color: var(--Soft-red);
+}
 hr { 
     display: block; 
     border-top: 1px solid var(--Light-grayish-blue);
 }
 /* After open */
-details > summary::after{
+details > summary:after{
     display: flex;
     align-items: center;
     content: url(./images/icon-arrow-down.svg);
-
+    transition: transform 0.3s ease;
 }
-details[open] > summary::after{
+
+details > summary:-webkit-details-marker{
+    display: none;
+}
+
+details[open] > summary:after{
     transform: rotate(180deg);
 }
+
 details[open] > summary{
     color: var(--Very-dark-desaturated-blue);
     font-weight: 700;
 }
 .answer{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-top: 1em;
     color: var(--Dark-grayish-blue);
     font-weight: 400;
+}
+footer{
+    color: white;
+}
+footer a:link{
+    color: wheat;
+}
+@media screen and (min-width: 55em) {
+
+    main{
+        display: flex;
+        flex-direction: row;
+        width: 50rem;
+        z-index: 2;
+        border: 1px solid var(--Soft-blue);
+        overflow:hidden;
+    }
+    .right-card{
+        width: 50%;
+        padding: 3em;
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5em;
+    }
+    main .left-card{
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        height: 100%;
+        width: 50%;
+        background-image: none;
+        z-index: 0;
+    }
+    main .left-card::after{
+        display: flex;
+        content:url(./images/bg-pattern-desktop.svg);
+        height: 30rem;
+        top:-3%;
+        left: 2.5%;
+        z-index: -1;
+    }
+    main .women{
+        display: flex;
+        margin-top: 1em;
+        width: 24rem;
+        margin-left: -4em;
+        z-index: -3;
+        
+    }
+    main .box{
+        display: flex;
+        width: 10rem;
+        z-index: -2;
+        margin-left: -4.9em;
+        margin-top:3em;
+    
+    }
+    }
+    .title{
+        text-align: left;
+    }
 }
