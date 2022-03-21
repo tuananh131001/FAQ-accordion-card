@@ -156,16 +156,10 @@ footer a:link{
         padding-top: 0;
         height: 100%;
         width: 50%;
-        background-image: none;
+        background: url(./images/bg-pattern-desktop.svg) right no-repeat;
+        background-size: 50rem;
         z-index: 0;
-    }
-    main .left-card::after{
-        display: flex;
-        content:url(./images/bg-pattern-desktop.svg);
-        height: 30rem;
-        top:-3%;
-        left: 2.5%;
-        z-index: -1;
+        
     }
     main .women{
         display: flex;
@@ -173,7 +167,6 @@ footer a:link{
         width: 24rem;
         margin-left: -4em;
         z-index: -3;
-        
     }
     main .box{
         display: flex;
@@ -181,7 +174,6 @@ footer a:link{
         z-index: -2;
         margin-left: -4.9em;
         margin-top:3em;
-    
     }
     }
     .title{
